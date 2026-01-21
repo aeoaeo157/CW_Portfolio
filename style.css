@@ -329,6 +329,8 @@ section {
     word-break: keep-all;
 }
 
+
+
 .about-stats {
     display: flex;
     flex-direction: column;
@@ -361,6 +363,12 @@ section {
     color: var(--text-light);
     margin-top: 0.5rem;
 }
+
+
+
+
+
+
 
 /* 기술 섹션 */
 .skills {
@@ -537,6 +545,27 @@ section {
     font-size: 0.8rem;
     color: var(--text-light);
 }
+
+
+
+
+.project-card .project-image img {
+    width: 100%;
+    height: 100%;
+      object-fit: cover; /* 이미지가 찌그러지지 않게 꽉 채움 */
+    transition: transform 0.5s ease; /* 호버 시 애니메이션 효과 */
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* 연락처 섹션 */
 .contact {

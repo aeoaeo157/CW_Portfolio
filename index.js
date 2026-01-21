@@ -1,4 +1,4 @@
-// 네비게이션 스크롤 효과
+// 1. 네비게이션 스크롤 효과
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
@@ -8,7 +8,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// 모바일 메뉴 토글
+// 2. 모바일 메뉴 토글
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
@@ -19,23 +19,32 @@ if (hamburger) {
     });
 }
 
-// 부드러운 스크롤
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+// 3. 부드러운 스크롤 (수정됨: 외부 링크 새 탭 열기 허용)
+document.querySelectorAll('a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-            // 모바일 메뉴 닫기
-            navMenu.classList.remove('active');
+        const href = this.getAttribute('href');
+
+        // 내부 링크(#으로 시작하는 경우)만 부드러운 스크롤 적용
+        if (href && href.startsWith('#')) {
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault(); // 내부 이동일 때만 기본 동작 방지
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // 모바일 메뉴 열려있을 경우 닫기
+                if (navMenu) navMenu.classList.remove('active');
+                if (hamburger) hamburger.classList.remove('active');
+            }
         }
+        // #으로 시작하지 않는 외부 링크(http...)는 간섭하지 않음
+        // 따라서 HTML의 target="_blank"가 정상 작동하게 됨
     });
 });
 
-// 스킬 바 애니메이션
+// 4. 스킬 바 애니메이션
 const observerOptions = {
     threshold: 0.5,
     rootMargin: '0px'
@@ -62,7 +71,7 @@ if (skillsSection) {
     observer.observe(skillsSection);
 }
 
-// 폼 제출 처리
+// 5. 폼 제출 처리 (데모)
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -72,17 +81,20 @@ if (contactForm) {
     });
 }
 
-// 스크롤 인디케이터 클릭
+// 6. 스크롤 인디케이터 클릭
 const scrollIndicator = document.querySelector('.scroll-indicator');
 if (scrollIndicator) {
     scrollIndicator.addEventListener('click', () => {
-        document.querySelector('#about').scrollIntoView({
-            behavior: 'smooth'
-        });
+        const aboutSection = document.querySelector('#about');
+        if (aboutSection) {
+            aboutSection.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 }
 
-// 섹션 진입 애니메이션
+// 7. 섹션 진입 애니메이션
 const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -97,6 +109,6 @@ const sectionObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('section').forEach(section => {
     section.style.opacity = '0';
     section.style.transform = 'translateY(30px)';
-    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    section.style.transition = 'all 0.6s ease-out';
     sectionObserver.observe(section);
 });
