@@ -163,14 +163,38 @@ body {
     transition: transform 0.3s ease;
 }
 
-.image-placeholder:hover {
-    transform: scale(1.05);
+.image-placeholder{
+   width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+    overflow: hidden; /* 이미지가 원 밖으로 나가지 않게 설정 */
 }
 
 .image-placeholder i {
     font-size: 5rem;
     color: white;
 }
+
+
+/* 새로 추가하는 프로필 이미지 스타일 */
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지가 비율에 맞춰 꽉 차게 함 */
+    display: block;
+}
+
+
+
+
 
 .hero-name {
     font-size: 3.5rem;
@@ -321,12 +345,15 @@ section {
 }
 
 .about-text p {
-  margin-bottom: 1.5rem;
+margin-bottom: 1.5rem;
     font-size: 1.1rem;
     color: var(--text-light);
     line-height: 1.8;
-    /* 텍스트가 너무 한 줄로 길어지는 걸 방지하면서 넓게 보고 싶을 때 조절 */
-    word-break: keep-all;
+    word-break: keep-all; /* 단어 단위로 줄바꿈 유지 */
+    
+    /* 양끝 맞춤 설정 */
+    text-align: justify;
+    letter-spacing: -0.2px;
 }
 
 
@@ -519,6 +546,7 @@ section {
 
 .project-content {
     padding: 1.5rem;
+    text-align: center;
 }
 
 .project-content h3 {
@@ -533,9 +561,10 @@ section {
 }
 
 .project-tags {
-    display: flex;
+ display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    justify-content: center; /* 이 줄을 추가하면 태그들이 가로 중앙에 배치됩니다 */
 }
 
 .project-tags span {
