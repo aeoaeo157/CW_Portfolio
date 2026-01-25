@@ -356,7 +356,7 @@ margin-bottom: 1.5rem;
     
     /* 양끝 맞춤 설정 */
     text-align: justify;
-    letter-spacing: -0.2px;
+    letter-spacing: 0px;
 }
 
 .about-text p span {
