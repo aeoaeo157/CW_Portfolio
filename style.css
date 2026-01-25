@@ -338,11 +338,13 @@ section {
     max-width: 800px; /* 가로 길이를 더 늘리고 싶다면 이 수치를 조절하세요 (기존보다 확장) */
     margin: 0 auto;    /* 컨텐츠 박스 자체를 중앙으로 */
 
-    outline: 3px solid red;
+   
 }
 
 .about-text {
     width: 80%;       /* 부모 너비를 꽉 채우도록 설정 */
+
+     outline: 3px solid red;
 }
 
 .about-text p {
