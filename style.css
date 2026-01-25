@@ -342,9 +342,9 @@ section {
 }
 
 .about-text {
-    width: 80%;       /* 부모 너비를 꽉 채우도록 설정 */
+    width: 100%;       /* 부모 너비를 꽉 채우도록 설정 */
 
-   /*  outline: 3px solid red; */
+     outline: 3px solid red; 
 }
 
 .about-text p {
