@@ -345,7 +345,7 @@ section {
 
 .about-text p {
 margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     color: var(--text-light);
     line-height: 1.8;
     word-break: keep-all; /* 단어 단위로 줄바꿈 유지 */
