@@ -342,22 +342,22 @@ section {
 }
 
 .about-text {
-    width: 100%;       /* 부모 너비를 꽉 채우도록 설정 */
+    width: 80%;       /* 부모 너비를 꽉 채우도록 설정 */
 
      outline: 1px solid red; 
 }
 
 .about-text p {
 margin-bottom: 1.5rem;
-    font-size: 0.9rem;
+    font-size: 1.0rem;
     color: var(--text-light);
     line-height: 1.8;
     word-break: keep-all; /* 단어 단위로 줄바꿈 유지 */
     
     /* 양끝 맞춤 설정 */
-    text-align: 
+    text-align: justify;
     letter-spacing: 0.1px;
-}   /*  text-align: justify; */
+}  
 
 .about-text p span {
     font-decoration: bold;
