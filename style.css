@@ -356,7 +356,9 @@ margin-bottom: 1.5rem;
     letter-spacing: -0.2px;
 }
 
-
+.about-text p span {
+    font-weight: bold;
+}
 
 .about-stats {
     display: flex;
