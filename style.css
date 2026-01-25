@@ -344,8 +344,8 @@ section {
 .about-text {
     width: 100%;       /* 부모 너비를 꽉 채우도록 설정 */
 
-     outline: 1px solid red; 
-}
+    
+}    /*  outline: 1px solid red;  */
 
 .about-text p {
 margin-bottom: 1.5rem;
