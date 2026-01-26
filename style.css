@@ -335,45 +335,31 @@ section {
     flex-direction: column;
     align-items: center; /* 내부 요소들을 가로 중앙에 배치 */
     gap: 2rem;
-    max-width: 900px; /* 가로 길이를 더 늘리고 싶다면 이 수치를 조절하세요 (기존보다 확장) */
+    max-width: 1000px; /* 가로 길이를 더 늘리고 싶다면 이 수치를 조절하세요 (기존보다 확장) */
     margin: 0 auto;    /* 컨텐츠 박스 자체를 중앙으로 */
-
-   
 }
 
 .about-text {
     width: 100%;       /* 부모 너비를 꽉 채우도록 설정 */
-
-    
-}    /*  outline: 1px solid red;  */
+    text-align: left;  /* 텍스트 자체는 왼쪽 정렬 */
+}
 
 .about-text p {
 margin-bottom: 1.5rem;
-<<<<<<< HEAD
     font-size: 100%;
-=======
-    font-size: 1.0rem;
->>>>>>> 512cb7e66f25a342ac218d760a43fd363bed893c
     color: var(--text-light);
     line-height: 1.8;
     word-break: keep-all; /* 단어 단위로 줄바꿈 유지 */
     
     /* 양끝 맞춤 설정 */
-<<<<<<< HEAD
  text-align: center;
 }
 
 .about-text p span {
     font-weight: 800;
-=======
-    text-align: justify;
-    letter-spacing: 0.1px;
-}  
-
-.about-text p span {
-    font-decoration: bold;
->>>>>>> 512cb7e66f25a342ac218d760a43fd363bed893c
 }
+
+
 
 .about-stats {
     display: flex;
